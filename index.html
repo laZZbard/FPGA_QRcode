@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>开发板信息</title>
+  <style>
+    body{
+      font-family: "Microsoft YaHei", sans-serif;
+      background:#f5f5f5;
+      margin:0;
+      padding:30px;
+    }
+    .card{
+      max-width:500px;
+      margin:40px auto;
+      background:#fff;
+      border-radius:12px;
+      padding:30px;
+      box-shadow:0 4px 16px rgba(0,0,0,0.08);
+    }
+    h2{margin-top:0;}
+    p{font-size:20px;line-height:1.8;}
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>开发板信息</h2>
+    <p id="course"></p>
+    <p id="board"></p>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get("id") || "未知";
+
+    document.getElementById("course").textContent = "课程信息：通信工程FPGA基础";
+    document.getElementById("board").textContent = "开发板序号：" + id;
+  </script>
+</body>
+</html>
